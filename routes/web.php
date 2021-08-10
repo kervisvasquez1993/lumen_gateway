@@ -12,7 +12,16 @@
 | and give it the Closure to call when that URI is requested.
 |
 */
+// book
+$router->get('/book',  'Book\BookController@index');
+$router->post('/book', 'Book\BookController@store');
+$router->get('/book/{book_id}', 'Book\BookController@show');
+$router->put('/book/{book_id}', 'Book\BookController@update');
+$router->delete('/book/{book_id}', 'Book\BookController@destroy');
 
-$router->get('/', function () use ($router) {
-    return $router->app->version();
-});
+// author
+$router->get('/author', 'AuthorController@index');
+$router->post('/author', 'AuthorController@store');
+$router->get('/author/{author}', 'AuthorController@show');
+$router->put('/author/{author}', 'AuthorController@update');
+$router->delete('/author/{author}', 'AuthorController@destroy');
