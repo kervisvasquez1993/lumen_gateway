@@ -20,7 +20,7 @@ $router->put('/book/{book_id}', 'Book\BookController@update');
 $router->delete('/book/{book_id}', 'Book\BookController@destroy');
 
 // author
-$router->get('/author', 'AuthorController@index');
+$router->get('/author', 'Author\AuthorController@index');
 $router->post('/author', 'AuthorController@store');
 $router->get('/author/{author}', 'AuthorController@show');
 $router->put('/author/{author}', 'AuthorController@update');

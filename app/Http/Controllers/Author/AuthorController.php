@@ -23,7 +23,9 @@ class AuthorController extends Controller
     }
 
     public function index()
-    {}
+    {
+       return  $this->authorService->getAuthors();
+    }
     public function show($author)
     {}
     public function store(Request $request)

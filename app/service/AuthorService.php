@@ -15,6 +15,6 @@ class AuthorService
 
      public function getAuthors()
      {
-        
+        $this->performRequest('GET', '/author');
      }
 }
