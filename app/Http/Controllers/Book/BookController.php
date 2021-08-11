@@ -22,7 +22,11 @@ class BookController extends Controller
     }
 
     public function index()
-    {}
+    {
+        
+     return $this->successResponse($this->booksService->getBooks());
+        
+    }
     public function show($book)
     {}
     public function store(Request $request)

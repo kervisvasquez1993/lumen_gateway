@@ -12,4 +12,9 @@ class AuthorService
      {
          $this->baseUri = config('services.author.base_uri');
      }
+
+     public function getAuthors()
+     {
+        
+     }
 }

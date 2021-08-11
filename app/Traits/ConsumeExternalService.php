@@ -8,7 +8,7 @@ trait ConsumeExternalService
     public function performRequest($method, $requestUrl, $formaParams = [], $headers = [])
     {
         $client = new Client([
-            'base_uri' => $this->base_uri,
+            'base_uri' => $this->baseUri,
         ]);
         $response = $client->request($method, $requestUrl, [
             'form_params' => $formaParams, 'headers' => $headers
