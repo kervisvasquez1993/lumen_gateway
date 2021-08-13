@@ -5,16 +5,19 @@ use App\Traits\ConsumeExternalService;
 
 class AuthorService 
 {
-    use ConsumeExternalService;
+     use ConsumeExternalService;
      public $baseUri;
 
      public function __construct()
      {
-         $this->baseUri = config('services.author.base_uri');
+         $this->baseUri = config('services.authors.base_uri');
      }
 
      public function getAuthors()
      {
-        $this->performRequest('GET', '/author');
+         
+       return  $this->performRequest('GET', '/author');
+       
      }
 }
+

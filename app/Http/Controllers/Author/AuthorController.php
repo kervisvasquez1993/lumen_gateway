@@ -24,7 +24,7 @@ class AuthorController extends Controller
 
     public function index()
     {
-       return  $this->authorService->getAuthors();
+       return $this->successResponse($this->authorService->getAuthors());
     }
     public function show($author)
     {}
