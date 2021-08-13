@@ -21,7 +21,7 @@ $router->delete('/book/{book_id}', 'Book\BookController@destroy');
 
 // author
 $router->get('/author', 'Author\AuthorController@index');
-$router->post('/author', 'AuthorController@store');
+$router->post('/author', 'Author\AuthorController@store');
 $router->get('/author/{author}', 'AuthorController@show');
 $router->put('/author/{author}', 'AuthorController@update');
 $router->delete('/author/{author}', 'AuthorController@destroy');

@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Service\AuthorService;
 use App\Http\Controllers\Controller;
 
+
 class AuthorController extends Controller
 {
     
@@ -29,7 +30,10 @@ class AuthorController extends Controller
     public function show($author)
     {}
     public function store(Request $request)
-    {}
+    {
+        return $this->successResponse($this->authorService->createAuthors($request->all(), 201));
+
+    }
     public function update(Request $request, $author)
     {}
     public function destroy($author)
