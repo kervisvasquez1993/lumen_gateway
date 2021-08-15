@@ -18,4 +18,9 @@ class BooksService
         
         return $this->performRequest('GET', '/book');
      }
+
+     public function createBook($data)
+     {
+         return $this->performRequest('POST', '/book', $data);
+     }
 }

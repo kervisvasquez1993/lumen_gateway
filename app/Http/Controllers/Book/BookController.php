@@ -31,7 +31,9 @@ class BookController extends Controller
     public function show($book)
     {}
     public function store(Request $request)
-    {}
+    {
+       return $this->successResponse($this->booksService->createBook($request->all()));
+    }
     public function update(Request $request, $book)
     {}
     public function destroy($book)
