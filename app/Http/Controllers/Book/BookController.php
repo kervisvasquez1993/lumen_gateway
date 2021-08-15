@@ -38,8 +38,9 @@ class BookController extends Controller
     public function store(Request $request)
     {
         /* comprobar si existe un author para el libro */
-        $this->successResponse($this->authorService->getAuthor($request->author_id));
-       return $this->successResponse($this->booksService->createBook($request->all()));
+        $validacion =  $this->successResponse($this->authorService->getAuthor($request->author_id));
+        
+        return $this->successResponse($this->booksService->createBook($request->all()));
     }
     public function update(Request $request, $book_id)
     {
