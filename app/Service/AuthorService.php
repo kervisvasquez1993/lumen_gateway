@@ -25,5 +25,9 @@ class AuthorService
        
       return  $this->performRequest('POST', '/author', $data);
      }
+     public function getAuthor($author)
+     {
+        return $this->performRequest('GET', "/author/{$author}");
+     }
 }
 

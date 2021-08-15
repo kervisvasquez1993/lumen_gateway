@@ -28,7 +28,9 @@ class AuthorController extends Controller
        return $this->successResponse($this->authorService->getAuthors());
     }
     public function show($author)
-    {}
+    {
+        return $this->successResponse($this->authorService->getAuthor($author));
+    }
     public function store(Request $request)
     {
         return $this->successResponse($this->authorService->createAuthors($request->all(), 201));

@@ -28,8 +28,10 @@ class BookController extends Controller
      return $this->successResponse($this->booksService->getBooks());
         
     }
-    public function show($book)
-    {}
+    public function show($book_id)
+    {
+        return $this->successResponse($this->booksService->getBook($book_id));
+    }
     public function store(Request $request)
     {
        return $this->successResponse($this->booksService->createBook($request->all()));
