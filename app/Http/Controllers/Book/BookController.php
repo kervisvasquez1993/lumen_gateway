@@ -36,9 +36,13 @@ class BookController extends Controller
     {
        return $this->successResponse($this->booksService->createBook($request->all()));
     }
-    public function update(Request $request, $book)
-    {}
-    public function destroy($book)
-    {}
+    public function update(Request $request, $book_id)
+    {
+        return $this->successResponse($this->booksService->editBook($request->all(), $book_id));
+    }
+    public function destroy($book_id)
+    {
+        return $this->successResponse($this->booksService->deleteBook($book_id));
+    }
 
 }

@@ -29,4 +29,13 @@ class BooksService
      {
          return $this->performRequest('POST', '/book', $data);
      }
+     public function editBook($data, $book)
+     {
+         return $this->performRequest('PUT', "/book/{$book}", $data);
+     }
+
+     public function deleteBook($book)
+     {
+         return $this->performRequest('DELETE', "/book/{$book}");
+     }
 }
