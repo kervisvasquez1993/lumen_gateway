@@ -5,8 +5,10 @@ namespace App\Exceptions;
 use Throwable;
 use App\Traits\ApiResponse;
 use GuzzleHttp\Exception\ClientException;
+use Illuminate\Auth\AuthenticationException;
 use Illuminate\Database\Events\QueryExecuted;
 use Illuminate\Validation\ValidationException;
+use Symfony\Component\HttpFoundation\Response;
 use Illuminate\Auth\Access\AuthorizationException;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
 use Laravel\Lumen\Exceptions\Handler as ExceptionHandler;
@@ -71,6 +73,11 @@ class Handler extends ExceptionHandler
         {
             return $this->unauthenticated($request, $exception);
         } */
+        
+        if($exception instanceof AuthenticationException)
+        {
+            return $this->errorResponse($exception->getMessage(), RESPONSE::HTTP_UNAUTHORIZED);
+        }
         if($exception instanceof AuthorizationException)
         {
             return $this->errorResponse(' No posee permiso para ejecutar esta accion', 403);
