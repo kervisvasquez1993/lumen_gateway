@@ -13,7 +13,8 @@
 |
 */
 // book
- $router->group(['middleware' => 'client.credentials'], function() use ($router){
+ $router->group(['middleware' => 'client.credentials'], function() use ($router)
+ {
 
     $router->get('/book',  'Book\BookController@index');
     $router->post('/book', 'Book\BookController@store');
